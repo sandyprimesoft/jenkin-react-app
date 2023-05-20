@@ -1,14 +1,14 @@
 pipeline {
     agent {
         docker {
-            image 'node:lts-bullseye-slim' 
-            args '-p 3000:3000' 
+            image: "node:alpine"
+            args: "-p 3000:3000"
         }
     }
     stages {
-        stage('Build') { 
+        stage("build") {
             steps {
-                sh 'sudo npm install' 
+                sh "sudo npm install"
             }
         }
     }
